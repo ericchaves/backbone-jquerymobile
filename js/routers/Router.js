@@ -18,7 +18,7 @@ function($, _) {
 		*/
 	  routes:{
 				"": "default",
-	      ":page":"default"
+	      ":page":"generic"
 	  },
 
 		// last argument must always be the Application
@@ -33,17 +33,24 @@ function($, _) {
     	this.firstPage = true;
     },
 
-		default:function(id){
+		default:function(){
 			for (var view in App.Views){
-				if (!id) id = view; // we assume that default view is our first view in Views
+				this.changePage(new App.Views[view]);
+				return;
+			}
+		},
+		
+		generic:function(id){
+			for (var view in App.Views){
 				if (view.toLowerCase() === id.toLowerCase()){
 					console.log('routing #%s', id);
 					this.changePage(new App.Views[view]);
-				}else
-					console.log('no view for #%s', id);
+					return;
+				}
 			}
+			console.log('no route for #%s', id);
 		},
-
+			
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
         page.render();
