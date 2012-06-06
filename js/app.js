@@ -1,13 +1,24 @@
-define(['require', 'backbone', 'jquery', 'underscore', './views/Home', 'hbs!templates/page1', 'hbs!templates/page2'],
+define(['require', 'backbone', 'jquery', 'underscore', './views/Home', './views/Page1', './views/Home'],
 function( require, Backbone, $, _ , homeView, page1View, page2View) {
 	// Using ECMAScript 5 strict mode during development. By default r.js will ignore that.
 	"use strict";
-	var MyApp = MyApp || {};
-	window.MyApp = MyApp;
 	
-	MyApp.HomeView = homeView,
-	MyApp.Page1View = page1View,
-	MyApp.Page2View = page2View
+	var MyApp = MyApp || {
+		Views: {
+			HomeView: homeView,
+			Page1View: page1View,
+			Page2View: page2View			
+		},
+		Models: {
+			
+		},
+		Routers: {
+			
+		},
+		Utils: {
+			
+		}
+	};
 
 	var AppRouter = Backbone.Router.extend({
 
@@ -28,17 +39,17 @@ function( require, Backbone, $, _ , homeView, page1View, page2View) {
 
 	    home:function () {
 	        console.log('#home');
-	        this.changePage(new MyApp.HomeView());
+	        this.changePage(new MyApp.Views.HomeView());
 	    },
 
 	    page1:function () {
 	        console.log('#page1');
-	        this.changePage(new Page1View());
+	        this.changePage(new MyApp.Views.Page1View());
 	    },
 
 	    page2:function () {
 	        console.log('#page2');
-	        this.changePage(new Page2View());
+	        this.changePage(new MyApp.Views.Page2View());
 	    },
 
 	    changePage:function (page) {

@@ -3,15 +3,15 @@
  * @class HomeView
  */
 define(['jquery', 'hbs!templates/page2'],
-function($, tmpHome) {
+function($, template) {
 	"use strict";
 	
 	var view = Backbone.View.extend({
-	    template: tmpPage1,
-	    render:function (eventName) {
-	        $(this.el).html(this.template());
-	        return this;
-	    }
+    template: template,
+    render:function (eventName) {
+        $(this.el).html(this.template());
+        return this;
+    }
 	});
 	
 	return view;
