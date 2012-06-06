@@ -1,18 +1,18 @@
-define(['require', 'backbone', 'jquery', 'underscore' ],
-function( require, Backbone, $, _ ) {
+define(['require', 'backbone', 'jquery', 'underscore', 'hbs!templates/home', 'hbs!templates/page1', 'hbs!templates/page2'],
+function( require, Backbone, $, _ , tmpHome, tmpPage1, tmpPage2) {
 	window.HomeView = Backbone.View.extend({
-
-	    template:_.template($('#home').html()),
-
+			
+			template: tmpHome,
+			
 	    render:function (eventName) {
-	        $(this.el).html(this.template());
+	        $(this.el).html(this.template({header: ['Backbone.js', 'jQuery Mobile' , 'Handlerbars', 'RequireJS']}));
 	        return this;
 	    }
 	});
 
 	window.Page1View = Backbone.View.extend({
 
-	    template:_.template($('#page1').html()),
+	    template: tmpPage1,
 
 	    render:function (eventName) {
 	        $(this.el).html(this.template());
@@ -22,7 +22,7 @@ function( require, Backbone, $, _ ) {
 
 	window.Page2View = Backbone.View.extend({
 
-	    template:_.template($('#page2').html()),
+	    template: tmpPage2,
 
 	    render:function (eventName) {
 	        $(this.el).html(this.template());

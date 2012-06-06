@@ -1,5 +1,5 @@
-# Backbone.js + jQuery Mobile #
+# Backbone.js + jQuery Mobile + Handlebars + RequireJS #
 
-A sample application that shows how to combine [Backbone.js](http://documentcloud.github.com/backbone/) (for the application structure and “routing”) and [jQuery Mobile](http://jquerymobile.com/) (for its styles and widgets).
+An extended version of Christophe's [Backbone.js + jQuery Mobile](https://github.com/ccoenraets/backbone-jquerymobile) including RequireJS for modularity and Handlebars as the template engine. 
 
-This sample application is documented [here]( http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile)
+The original application is documented [here]( http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile).

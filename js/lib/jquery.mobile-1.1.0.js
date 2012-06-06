@@ -7,7 +7,7 @@
 * http://jquery.org/license
 *
 */
-(function ( root, doc, factory ) {
+(function ( root, doc, factory ) {	
 	if ( typeof define === "function" && define.amd ) {
 		// AMD. Register as an anonymous module.
 		define( [ "jquery" ], function ( $ ) {

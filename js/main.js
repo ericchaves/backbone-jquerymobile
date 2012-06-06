@@ -4,14 +4,23 @@ require.config( {
 	    'backbone':         'lib/backbone-amd',
 	    'underscore':       'lib/lodash',
 	    'jquerymobile':     'lib/jquery.mobile-1.1.0',
+			'Handlebars': 			'lib/require/handlebars-1.0.0.beta.6',
+			'hbs': 							'lib/require/hbs',
 			'app': 							'app' 
+	},
+  locale : "pt_br",	
+	hbs: {
+		helperDirectory: 'templates/helpers/',
+		i18nDirectory:   'templates/i18n/'
 	}
 });
 
 require(['require', 'backbone', 'jquery', 'underscore' ],
 function( require, Backbone, $, _ ) {
-	console.log('loaded core libs');
-	// jqm-config
+
+	// TODO: Defining globals so we don't need to keep requiring libs all the time
+
+	// jqm-config. added before lading JQM
 	$(document).bind("mobileinit", function () {
 	    $.mobile.ajaxEnabled = false;
 	    $.mobile.linkBindingEnabled = false;
@@ -22,9 +31,10 @@ function( require, Backbone, $, _ ) {
 	        $(event.currentTarget).remove();
 	    });
 	});
+
 	// loading jqm
   require(['require', 'jquerymobile', 'app'],
 	function(require, $$ ) {
-		console.log('loaded jqm');
+		// JQM and App Loaded and running. ;)
 	});
 });
