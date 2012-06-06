@@ -4,9 +4,9 @@
  */
 define(['jquery', 'underscore'],
 function($, _) {
+	var App = {};	
 	
 	var Router = Backbone.Router.extend({
-		App: {},
 
 	  routes:{
 	      "":"home",
@@ -14,10 +14,10 @@ function($, _) {
 	      "page2":"page2"
 	  },
 
+		// last argument must always be the Application
     initialize:function () {
+			App = _.last(arguments);
 
-			this.App = _.last(arguments);
-			
        // Handle back button throughout the application
        $('.back').live('click', function(event) {
            window.history.back();
@@ -28,17 +28,17 @@ function($, _) {
 
     home:function () {
         console.log('#home');
-        this.changePage(new this.App.Views.Home());
+        this.changePage(new App.Views.Home());
     },
 
     page1:function () {
         console.log('#page1');
-        this.changePage(new this.App.Views.Page1());
+        this.changePage(new App.Views.Page1());
     },
 
     page2:function () {
         console.log('#page2');
-        this.changePage(new this.App.Views.Page2());
+        this.changePage(new App.Views.Page2());
     },
 
     changePage:function (page) {
