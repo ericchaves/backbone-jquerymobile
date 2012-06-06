@@ -10,7 +10,7 @@ function($, _) {
 	var Router = Backbone.Router.extend({
 
 		/*
-		 	Pay attention to routes order, because order matters.
+		 	Pay attention to routes order because order matters.
 			In the example below, page3 would never be hitted:
 				"":"home",
 	      ":page":"default",

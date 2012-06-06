@@ -10,9 +10,12 @@ function( require, Backbone, $, _ , router, homeView, page1View, page2View) {
 			Page2: page2View			
 		},
 		Models: {
-			
 		},
 		Utils: {
+			stack: {header: ['Backbone.js', 'jQuery Mobile' , 'Handlerbars', 'RequireJS']}
+		},
+		defaults: {
+			
 		},
 		Router: {},
 		start: function(){
@@ -23,7 +26,8 @@ function( require, Backbone, $, _ , router, homeView, page1View, page2View) {
 			});			
 		}
 	};
-	
+	// make app global
+	window.MyApp = MyApp;
 	MyApp.start();
 
 });
