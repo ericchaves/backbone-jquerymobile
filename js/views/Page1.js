@@ -9,7 +9,7 @@ function($, tpl) {
 	var view = Backbone.View.extend({
 		template: tpl,
 		render:function (eventName) {
-		    $(this.el).html(this.template({header: ['Backbone.js', 'jQuery Mobile' , 'Handlerbars', 'RequireJS']}));
+		    $(this.el).html(this.template());
 		    return this;
 		}
 	});

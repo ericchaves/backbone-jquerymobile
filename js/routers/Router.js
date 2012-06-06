@@ -4,14 +4,21 @@
  */
 define(['jquery', 'underscore'],
 function($, _) {
+	"use strict";
 	var App = {};	
 	
 	var Router = Backbone.Router.extend({
 
+		/*
+		 	Pay attention to routes order, because order matters.
+			In the example below, page3 would never be hitted:
+				"":"home",
+	      ":page":"default",
+				"page3": "home"
+		*/
 	  routes:{
-	      "":"home",
-	      "page1":"page1",
-	      "page2":"page2"
+				"": "default",
+	      ":page":"default"
 	  },
 
 		// last argument must always be the Application
@@ -19,27 +26,23 @@ function($, _) {
 			App = _.last(arguments);
 
        // Handle back button throughout the application
-       $('.back').live('click', function(event) {
-           window.history.back();
-           return false;
-       });
-       this.firstPage = true;
+      $('.back').live('click', function(event) {
+          window.history.back();
+          return false;
+      });
+    	this.firstPage = true;
     },
 
-    home:function () {
-        console.log('#home');
-        this.changePage(new App.Views.Home());
-    },
-
-    page1:function () {
-        console.log('#page1');
-        this.changePage(new App.Views.Page1());
-    },
-
-    page2:function () {
-        console.log('#page2');
-        this.changePage(new App.Views.Page2());
-    },
+		default:function(id){
+			for (var view in App.Views){
+				if (!id) id = view; // we assume that default view is our first view in Views
+				if (view.toLowerCase() === id.toLowerCase()){
+					console.log('routing #%s', id);
+					this.changePage(new App.Views[view]);
+				}else
+					console.log('no view for #%s', id);
+			}
+		},
 
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
