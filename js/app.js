@@ -1,34 +1,13 @@
-define(['require', 'backbone', 'jquery', 'underscore', 'hbs!templates/home', 'hbs!templates/page1', 'hbs!templates/page2'],
-function( require, Backbone, $, _ , tmpHome, tmpPage1, tmpPage2) {
-	window.HomeView = Backbone.View.extend({
-			
-			template: tmpHome,
-			
-	    render:function (eventName) {
-	        $(this.el).html(this.template({header: ['Backbone.js', 'jQuery Mobile' , 'Handlerbars', 'RequireJS']}));
-	        return this;
-	    }
-	});
-
-	window.Page1View = Backbone.View.extend({
-
-	    template: tmpPage1,
-
-	    render:function (eventName) {
-	        $(this.el).html(this.template());
-	        return this;
-	    }
-	});
-
-	window.Page2View = Backbone.View.extend({
-
-	    template: tmpPage2,
-
-	    render:function (eventName) {
-	        $(this.el).html(this.template());
-	        return this;
-	    }
-	});
+define(['require', 'backbone', 'jquery', 'underscore', './views/Home', 'hbs!templates/page1', 'hbs!templates/page2'],
+function( require, Backbone, $, _ , homeView, page1View, page2View) {
+	// Using ECMAScript 5 strict mode during development. By default r.js will ignore that.
+	"use strict";
+	var MyApp = MyApp || {};
+	window.MyApp = MyApp;
+	
+	MyApp.HomeView = homeView,
+	MyApp.Page1View = page1View,
+	MyApp.Page2View = page2View
 
 	var AppRouter = Backbone.Router.extend({
 
@@ -49,7 +28,7 @@ function( require, Backbone, $, _ , tmpHome, tmpPage1, tmpPage2) {
 
 	    home:function () {
 	        console.log('#home');
-	        this.changePage(new HomeView());
+	        this.changePage(new MyApp.HomeView());
 	    },
 
 	    page1:function () {
@@ -79,7 +58,7 @@ function( require, Backbone, $, _ , tmpHome, tmpPage1, tmpPage2) {
 
 	$(document).ready(function () {
 	    console.log('document ready');
-	    app = new AppRouter();
+	    MyApp.app = new AppRouter();
 	    Backbone.history.start();
 	});
 });
