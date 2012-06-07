@@ -1,0 +1,1 @@
+define(["jquery","hbs!templates/page1"],function(a,b){var c=Backbone.View.extend({template:b,transition:"slidedown",render:function(b){return a(this.el).html(this.template()),this}});return c})

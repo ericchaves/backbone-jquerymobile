@@ -1,0 +1,1 @@
+({appDir:"../",dir:"../../build-03",baseUrl:"js/",mainConfigFile:"main.js",paths:{jquery:"empty:"},removeCombined:!0,preserveLicenseComments:!1,modules:[{name:"main"}]})

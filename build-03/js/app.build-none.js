@@ -1,0 +1,1 @@
+({appDir:"../",dir:"../../build-01",baseUrl:"js/",optimize:"none",paths:{jquery:"empty:"}})

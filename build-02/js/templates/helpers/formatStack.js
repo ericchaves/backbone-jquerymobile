@@ -1,0 +1,1 @@
+define(["underscore","Handlebars"],function(a,b){b.registerHelper("formatStack",function(b){var c="";return a.each(a.initial(b),function(a){c+=a+" + "}),c+=b[b.length-1]})})
