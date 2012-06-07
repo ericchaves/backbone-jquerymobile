@@ -1,1 +1,0 @@
-define(["jquery","hbs!templates/home"],function(a,b){var c=Backbone.View.extend({template:b,render:function(b){return a(this.el).html(this.template(MyApp.Utils.stack)),this}});return c})

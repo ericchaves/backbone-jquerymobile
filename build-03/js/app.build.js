@@ -1,1 +1,0 @@
-({appDir:"../",dir:"../../build-04",baseUrl:"js/",mainConfigFile:"main.js",optimize:"none",paths:{jquery:"empty:"},preserveLicenseComments:!1,modules:[{name:"main",include:["app"]}]})

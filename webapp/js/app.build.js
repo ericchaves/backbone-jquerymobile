@@ -9,16 +9,13 @@
   dir: "../../build-04",
   baseUrl: "js/",
 	mainConfigFile: 'main.js',
-	optimize: 'none',
+//	optimize: 'none',
   paths: {
       "jquery": "empty:", // jquery should be left0out since it's already included in our require-jquery file.
   },
 //	removeCombined: true,
 	preserveLicenseComments: false,
 	modules: [
- 		{ name: 'main',
-		include : [
-	   	"app"
-		]}
+ 		{ name: 'main', include : ['MyApp', 'jquerymobile'] }
 	]
 })

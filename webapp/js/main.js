@@ -10,6 +10,11 @@ require.config( {
 	    'jquerymobile':     'lib/jquery.mobile-1.1.0',
 			'Handlebars': 			'lib/require/handlebars-1.0.0.beta.6',
 			'hbs': 							'lib/require/hbs',
+			'router': 					'routers/Router',
+			'homeView': 				'views/Home',
+			'page1View': 				'views/Page1',
+			'page2View': 				'views/Page2',
+			'jqm-init':         'modules/jqm-init',
 			'MyApp':						'app' 
 	},
   locale : "pt_br",	
@@ -19,8 +24,8 @@ require.config( {
 	}
 });
 
-require(['require', 'backbone', 'jquery', 'underscore' ],
-function( require, Backbone, $, _ ) {
+require(['require', 'backbone', 'jquery', 'underscore', 'MyApp'],
+function( require, Backbone, $, _ , app) {
 
 	// TODO: Defining globals so we don't need to keep requiring libs all the time
 
@@ -35,11 +40,9 @@ function( require, Backbone, $, _ ) {
 	        $(event.currentTarget).remove();
 	    });
 	});
-
-	// loading jqm
-  require(['require', 'jquerymobile', 'MyApp'],
-	function(require, $$, app ) {
-		// JQM and App Loaded and running. ;)
-		app.start();
+	
+	require(['jquerymobile'], function($$){
+		app.start();		
 	});
+
 });

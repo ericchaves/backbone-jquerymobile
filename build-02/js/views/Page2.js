@@ -1,1 +1,0 @@
-define(["jquery","hbs!templates/page2"],function(a,b){var c=Backbone.View.extend({template:b,transition:"slideup",render:function(b){return a(this.el).html(this.template({header:["Backbone.js","jQuery Mobile","Handlerbars","RequireJS"]})),this}});return c})

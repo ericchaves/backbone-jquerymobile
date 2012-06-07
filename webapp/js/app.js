@@ -2,8 +2,8 @@
  * App.js file
  * main application
  */
-define(['require', 'backbone', 'jquery', 'underscore', './routers/Router','./views/Home', './views/Page1', './views/Page2'],
-function( require, Backbone, $, _ , router, homeView, page1View, page2View) {
+define([ 'jquery', 'backbone', 'router','homeView', 'page1View', 'page2View'],
+function( $,  Backbone , router, homeView, page1View, page2View) {
 	// Using ECMAScript 5 strict mode during development. By default r.js will ignore that.
 	"use strict";
 	

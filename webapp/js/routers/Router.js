@@ -31,6 +31,7 @@ function($, _) {
           return false;
       });
     	this.firstPage = true;
+			console.log('router initialized');
     },
 
 		default:function(){
