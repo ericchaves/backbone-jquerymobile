@@ -5,6 +5,7 @@
  */
 require.config( {
 	paths: {
+			'jquery': 					'lib/jquery',
 	    'backbone':         'lib/backbone-amd',
 	    'underscore':       'lib/lodash',
 	    'jquerymobile':     'lib/jquery.mobile-1.1.0',
@@ -14,8 +15,7 @@ require.config( {
 			'homeView': 				'views/Home',
 			'page1View': 				'views/Page1',
 			'page2View': 				'views/Page2',
-			'jqm-init':         'modules/jqm-init',
-			'MyApp':						'app' 
+			'app':							'app'
 	},
   locale : "pt_br",	
 	hbs: {
@@ -24,8 +24,8 @@ require.config( {
 	}
 });
 
-require(['require', 'backbone', 'jquery', 'underscore', 'MyApp'],
-function( require, Backbone, $, _ , app) {
+require(['require', 'backbone', 'jquery', 'underscore', 'app'],
+function( require, Backbone, $, _, app ) {
 
 	// TODO: Defining globals so we don't need to keep requiring libs all the time
 
@@ -42,7 +42,7 @@ function( require, Backbone, $, _ , app) {
 	});
 	
 	require(['jquerymobile'], function($$){
-		app.start();		
+		app.start();
 	});
-
+	
 });

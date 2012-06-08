@@ -9,9 +9,6 @@
   dir: "../../build-03",
   baseUrl: "js/",
 	mainConfigFile: 'main.js',
-  paths: {
-      "jquery": "empty:", // jquery should be left0out since it's already included in our require-jquery file.
-  },
 	removeCombined: true,
 	preserveLicenseComments: false,
 	modules: [

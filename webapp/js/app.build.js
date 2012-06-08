@@ -10,12 +10,10 @@
   baseUrl: "js/",
 	mainConfigFile: 'main.js',
 //	optimize: 'none',
-  paths: {
-      "jquery": "empty:", // jquery should be left0out since it's already included in our require-jquery file.
-  },
-//	removeCombined: true,
+	findNestedDependencies: true,	
+	removeCombined: true,
 	preserveLicenseComments: false,
 	modules: [
- 		{ name: 'main', include : ['MyApp', 'jquerymobile'] }
+ 		{ name: 'main', include : ['jquerymobile'] }
 	]
 })
